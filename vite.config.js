@@ -19,4 +19,14 @@ export default defineConfig({
       "@api": path.resolve(__dirname, "src/api"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          productsPage: ["@pages/products"],
+          notFoundPage: ["@pages/not_found"],
+        },
+      },
+    },
+  },
 });

@@ -1,18 +1,22 @@
-import Home from "@pages/home";
-import Products from "@pages/products";
 import "./App.css";
+import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "@layouts/MainLayout";
+import Home from "@src/pages/home";
+const Products = lazy(() => import("@pages/products"));
+const NotFound = lazy(() => import("@pages/not_found"));
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<Home />} />
-        <Route path="/product-list" element={<Products />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
-      </Route>
-    </Routes>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/product-list" element={<Products />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }
 
