@@ -13,7 +13,12 @@
     "isolatedModules": true,
     "baseUrl": ".", // base directory for non-relative imports
     "paths": {
-      "@src/*": ["src/*"]
+      "@src/*": ["src/*"],
+      "@pages/*": ["src/pages/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@api/*": ["src/api/*"]
     }
   },
   "include": ["src"]

@@ -1,9 +1,8 @@
-import Home from "@src/pages/home";
-import Products from "@src/pages/products";
-// import viteLogo from "@src/vite.svg";
+import Home from "@pages/home";
+import Products from "@pages/products";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import MainLayout from "@src/layouts/MainLayout";
+import MainLayout from "@layouts/MainLayout";
 
 function App() {
   return (

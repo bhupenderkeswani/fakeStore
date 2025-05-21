@@ -11,7 +11,9 @@ export default function MainLayout() {
       </main>
 
       <footer>
-        <p>&copy; 2025 Fake Store</p>
+        <p>
+          &copy; 2025 Fake Store by <b>Bhupender Keswani</b>
+        </p>
       </footer>
     </>
   );
