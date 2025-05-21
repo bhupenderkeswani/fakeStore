@@ -4,7 +4,8 @@ import ProductPrice from "./ProductPrice";
 
 export default function ProductRow(props: ProductType) {
   const { title, price, image, rating, description, category } = props;
-  const titleToShow = `${title.substring(0, 20)}...`;
+  const titleToShow =
+    title.length > 16 ? `${title.substring(0, 20)}...` : title;
 
   return (
     <li

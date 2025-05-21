@@ -10,15 +10,15 @@ import ArrowIconUp from "@assets/arrow_upward_blue.svg";
 export default function ProductsContainer({
   data,
 }: ProductsContainerPropsType) {
-  const [isListView, setIsListView] = useState<Boolean>(false);
-  const [isAsc, setIsAsc] = useState<Boolean>(false);
+  const [isListView, setIsListView] = useState<Boolean>(false); // default setting as list view
+  const [isSortByAsc, setIsSortByAsc] = useState<Boolean>(false); // default setting it as order by price in descending order
 
   const sortedData = useMemo(() => {
     if (!data) return undefined;
     return [...data].sort((a, b) =>
-      isAsc ? a.price - b.price : b.price - a.price
+      isSortByAsc ? a.price - b.price : b.price - a.price
     );
-  }, [data, isAsc]);
+  }, [data, isSortByAsc]);
 
   if (!data || data?.length === 0) {
     return (
@@ -44,10 +44,10 @@ export default function ProductsContainer({
         </button>
         <button
           className="cursor-pointer"
-          onClick={() => setIsAsc(!isAsc)}
+          onClick={() => setIsSortByAsc(!isSortByAsc)}
           title="Sort by Price"
         >
-          {isAsc ? (
+          {isSortByAsc ? (
             <img src={ArrowIconUp} alt="ArrowIconUp" width={16} />
           ) : (
             <img src={ArrowIcon} alt="ArrowIcon" width={16} />

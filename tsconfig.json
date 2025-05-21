@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "baseUrl": ".", // base directory for non-relative imports
+    "baseUrl": ".",
     "paths": {
       "@src/*": ["src/*"],
       "@pages/*": ["src/pages/*"],
@@ -19,7 +19,8 @@
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@api/*": ["src/api/*"]
-    }
+    },
+    "types": ["jest", "@testing-library/jest-dom"]
   },
   "include": ["src"]
 }

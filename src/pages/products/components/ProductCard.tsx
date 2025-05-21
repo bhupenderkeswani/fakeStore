@@ -4,7 +4,8 @@ import ProductPrice from "./ProductPrice";
 
 export default function ProductCard(props: ProductType) {
   const { title, price, image, rating } = props;
-  const titleToShow = `${title.substring(0, 16)}...`;
+  const titleToShow =
+    title.length > 16 ? `${title.substring(0, 16)}...` : title;
 
   return (
     <li
