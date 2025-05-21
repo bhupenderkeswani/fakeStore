@@ -1,10 +1,10 @@
 import { ProductType } from "@src/types";
-import { formatAmount } from "../products.utils";
 import ProductRating from "./ProductRating";
+import ProductPrice from "./ProductPrice";
 
 export default function ProductCard(props: ProductType) {
   const { title, price, image, rating } = props;
-  const titleToShow = `${title.substring(0, 10)}...`;
+  const titleToShow = `${title.substring(0, 16)}...`;
 
   return (
     <li
@@ -19,7 +19,7 @@ export default function ProductCard(props: ProductType) {
         height={50}
         width={100}
       />
-      <div>$ {formatAmount(price)}</div>
+      <ProductPrice value={price} />
       <ProductRating {...rating} />
     </li>
   );
